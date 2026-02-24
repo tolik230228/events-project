@@ -1,11 +1,26 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>FIND BEST EVENTS AROUND THE WORLD</h1>
+      <div class="search-wrapper">
+        <input type="text" placeholder="Start searching" class="search-input" id="search-input">
+        <select  id="country-select">
+            <option value="">Choose country</option>
+        </select>
+      </div>
+      
+      <div class="loader" id="loader">Loading Events ...</div>
+      <div class="events-grid" id="events-container"></div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
