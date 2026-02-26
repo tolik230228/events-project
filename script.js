@@ -1,4 +1,5 @@
-import { API_KEY, BASE_URL, countries, domElements, state } from "./shared/constants.js"
+import { countries, domElements, state } from "./shared/constants.js"
+import { fetchEvents } from "./api/api.js"
 
 countries.forEach(country => {
     const option = document.createElement("option")
@@ -6,3 +7,5 @@ countries.forEach(country => {
     option.innerText = country.name 
     domElements.countrySelect.appendChild(option)
 })
+
+fetchEvents()

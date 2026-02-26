@@ -6,7 +6,8 @@ export const state = {
     size: 15,
     total_pages: 0,
     keyword: "",
-    country_code: ""
+    country_code: "",
+    current_events: []
 }
 
 export const countries = [
