@@ -1,6 +1,9 @@
 import { API_KEY, BASE_URL, state, domElements } from "../shared/constants.js";
+import { renderSkeletons } from "../shared/utils.js";
 
 export async function fetchEvents() {
+  renderSkeletons()
+  
   try {
     let url = `${BASE_URL}?apikey=${API_KEY}&size=${state.size}&page=${state.page}`;
 
