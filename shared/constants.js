@@ -30,5 +30,6 @@ export const domElements = {
     loader: document.getElementById("loaded"),
     eventsGrid: document.getElementById("events-container"),
     paginationContainer: document.getElementById("pagination"),
+    searchBtn: document.getElementById("search-btn")
 }
 
