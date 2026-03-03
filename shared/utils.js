@@ -44,3 +44,25 @@ domElements.eventsGrid.insertAdjacentHTML("beforeend", cardHtml)
 
   });
 }
+
+export function renderPagination() {
+  domElements.paginationContainer.innerHTML = ""
+
+  if (state.total_pages <= 1) return
+
+  const pages = []
+  const range = 2
+
+  for (let i = 0; i < state.total_pages; i++) {
+    if (i === 0 || i === state.total_pages -1 || i >= state.page - range || i <= state.page + range) {
+      pages.push(i)
+      
+
+    }
+    else if (pages[pages.length -1] !== "...") {
+      pages.push("...")
+    }
+  }
+  
+
+}
