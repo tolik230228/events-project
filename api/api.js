@@ -1,5 +1,5 @@
 import { API_KEY, BASE_URL, state, domElements } from "../shared/constants.js";
-import { renderSkeletons,renderEvents } from "../shared/utils.js";
+import { renderSkeletons,renderEvents, renderPagination } from "../shared/utils.js";
 
 domElements.sizeSelect.addEventListener("change", (event) => {
   state.size = parseInt(event.target.value)
@@ -37,6 +37,7 @@ export async function fetchEvents() {
 
       state.current_events = data._embedded.events
       renderEvents(data._embedded.events)
+      renderPagination()
     } else {
         state.total_pages = 0
         state.current_events = []
