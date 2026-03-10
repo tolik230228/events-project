@@ -19,15 +19,15 @@ export const renderSkeletons = () => {
 };
 
 export function renderEvents(events) {
-  domElements.eventsGrid.innerHTM = "";
+  domElements.eventsGrid.innerHTML = "";
 
   events.forEach((event) => {
     const image =
       event.images.find((img) => img.width > 400)?.url || event.images[0].url;
-      const date = event.dates.start.localDate || "No date"
-      const location = event._embedded?.venues?.[0]?.name || "No venue"
+    const date = event.dates.start.localDate || "No date"
+    const location = event._embedded?.venues?.[0]?.name || "No venue"
 
-      const cardHtml = `
+    const cardHtml = `
         <div class="card">
       <div class="image-container"> 
         <img src="${image}" alt="${event.name}" class="card-img">
@@ -40,7 +40,7 @@ export function renderEvents(events) {
   </div>
       `
 
-domElements.eventsGrid.insertAdjacentHTML("beforeend", cardHtml)
+    domElements.eventsGrid.insertAdjacentHTML("beforeend", cardHtml)
 
 
   });
@@ -53,7 +53,7 @@ export function renderPagination() {
 
   const pages = []
   const range = 2
-  
+
   console.log(pages)
 
   for (let i = 0; i < state.total_pages; i++) {
@@ -63,23 +63,27 @@ export function renderPagination() {
       pages.push("...")
     }
   }
-  
-domElements.paginationContainer.appendChild(createPageBtn('Prev', state.page - 1, state.page > 0))
-pages.forEach(page =>{
-  if (page === '...') {
-    domElements.paginationContainer.appendChild(createDots())
-  } else {
-    const btn = createPageBtn(page + 1, page, true)
-    if(page === state.page) btn.classList.add('active')
+
+  domElements.paginationContainer.appendChild(createPageBtn('Prev', state.page - 1, state.page > 0))
+  pages.forEach(page => {
+    if (page === '...') {
+      domElements.paginationContainer.appendChild(createDots())
+    } else {
+      const btn = createPageBtn(page + 1, page, true)
+      if (page === state.page) {
+        btn.classList.add('active');
+        btn.disabled = true;
+      }
+
       domElements.paginationContainer.appendChild(btn)
-  }
-})
-domElements.paginationContainer.appendChild(createPageBtn('Next', state.page + 1, state.page <state.total_pages -1))
+    }
+  })
+  domElements.paginationContainer.appendChild(createPageBtn('Next', state.page + 1, state.page < state.total_pages - 1))
 }
 
 function createPageBtn(text, targetPage, isEnabled) {
   const pageBtn = document.createElement('button')
-  pageBtn.innerText = text 
+  pageBtn.innerText = text
   pageBtn.className = 'page-btn'
   pageBtn.disabled = !isEnabled
   if (isEnabled) {

@@ -14,7 +14,7 @@ domElements.searchInput.addEventListener("keypress", (event) => {
 domElements.searchBtn.addEventListener("click", handleSearch)
 
 export async function fetchEvents() {
-  renderSkeletons()
+  renderSkeletons();
   
   try {
     let url = `${BASE_URL}?apikey=${API_KEY}&size=${state.size}&page=${state.page}`;
