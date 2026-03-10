@@ -95,3 +95,49 @@ h1 {
     margin-bottom: 50px;
     min-height: 300px;
 }
+
+.card {
+    background: transparent;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 15px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 40px 40px 40px;
+    border: 4px solid transparent;
+}
+
+.card:hover .card-img {
+    border-color: #ff00bf ;
+}
+
+.event-info h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.event-date, .event-venue {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #b3b3b3;
+}
