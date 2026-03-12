@@ -30,6 +30,18 @@ export const domElements = {
     loader: document.getElementById("loaded"),
     eventsGrid: document.getElementById("events-container"),
     paginationContainer: document.getElementById("pagination"),
-    searchBtn: document.getElementById("search-btn")
+    searchBtn: document.getElementById("search-btn"),
+
+    backdrop: document.getElementById("backdrop"),
+    modalCloseBtn: document.getElementById("modal-close-btn"),
+    modalImg: document.getElementById("modal-img"),
+    modalTitle: document.getElementById("modal-title"),
+    modalDate: document.getElementById("modal-date"),
+    modalTime: document.getElementById("modal-time"),
+    modalVenue: document.getElementById("modal-venue"),
+    modalPrices: document.getElementById("modal-prices"),
+    modalDesc: document.getElementById("modal-desc"),
+    backdrop: document.getElementById("backdrop"),
+    modalLink: document.getElementById("modal-link")
 }
 

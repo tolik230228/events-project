@@ -29,7 +29,6 @@ export async function fetchEvents() {
 
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
     if (data._embedded && data._embedded.events) {
       const apiTotalPages = data.page.totalPages;
       const maxAllowedPages = Math.floor(1000 / state.size);

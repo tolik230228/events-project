@@ -28,7 +28,7 @@ export function renderEvents(events) {
     const location = event._embedded?.venues?.[0]?.name || "No venue"
 
     const cardHtml = `
-        <div class="card">
+        <div class="card" onclick="openModal('${event.id}')">
       <div class="image-container"> 
         <img src="${image}" alt="${event.name}" class="card-img">
     </div>
@@ -54,7 +54,6 @@ export function renderPagination() {
   const pages = []
   const range = 2
 
-  console.log(pages)
 
   for (let i = 0; i < state.total_pages; i++) {
     if (i === 0 || i === state.total_pages - 1 || (i >= state.page - range && i <= state.page + range)) {
@@ -101,4 +100,10 @@ function createDots() {
   span.innerText = '...'
   span.style.alignSelf = 'center'
   return span
+}
+
+window.openModal = function(id) {
+    const event = state.current_events.find(event => event.id === id)
+
+    if(!event) return
 }
