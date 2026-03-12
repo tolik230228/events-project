@@ -11,16 +11,50 @@
       <h1>FIND BEST EVENTS AROUND THE WORLD</h1>
       <div class="search-wrapper">
         <input type="text" placeholder="Start searching" class="search-input" id="search-input">
-        <select  id="country-select">
+        <select class="country-select"  id="country-select">
             <option value="">Choose country</option>
         </select>
+        <select class="size-select" id="size-select">
+            <option value="15">15 per page</option>
+            <option value="20">20 per page</option>
+            <option value="25">25 per page</option>
+            <option value="30">30 per page</option>
+        </select>
+        <button class="search-btn" id="search-btn">Search</button>
       </div>
       
-      <div class="loader" id="loader">Loading Events ...</div>
       <div class="events-grid" id="events-container"></div>
       <div class="pagination" id="pagination"></div>
     </div>
 
-    <script src="script.js"></script>
+    <div class="backdrop" id="backdrop">
+      <div class="modal">
+        <button class="modal-close-btn" id="modal-close-btn">&times;</button>
+        <div class="modal-img-wrapper">
+          <img src="" alt="" id="modal-img" class="modal-img">
+        </div>
+        <div class="modal-content">
+          <h2 class="modal-title" id="modal-title">Title or idk</h2>
+
+          <div class="modal-info-row">
+            <div class="modal-info-item">📆 <span id="modal-date">12.03.2026</span></div>
+            <div class="modal-info-item">🕔 <span id="modal-time">19:22</span></div>
+            <div class="modal-info-item">📍 <span id="modal-venue">Plaza</span></div>
+          </div>
+          <div class="modal-prices" id="modal-prices">51$</div>
+          <p class="modal-desc" id="modal-desc">No description</p>
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <a href="#" target="_blank" rel="noopener noreferrer" id="modal-link" class="modal-action-btn">BUY TICKET</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./shared/constants.js"></script>
+    <script type="module" src="./shared/utils.js"></script>
+    <script type="module" src="./api/api.js"></script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
+
+
