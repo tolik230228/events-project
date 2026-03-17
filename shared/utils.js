@@ -106,4 +106,18 @@ window.openModal = function(id) {
     const event = state.current_events.find(event => event.id === id)
 
     if(!event) return
+
+    const bigImg = event.images.sort((a, b) => b.width - a.width)[0]?.url
+    domElements.modalImg.src = bigImg
+
+    domElements.modalTitle.textContent = event.name 
+    domElements.modalDate.textContent = event.dates.start.localDate || "No date"
+    domElements.modalTime.textContent = event.dates.start.localTime || "No time"
+    domElements.modalVenue.textContent = event._embedded.venues[0].name
+    domElements.modalDesc.textContent = event.info || "No description"
+    domElements.modalLink.href = event.url 
+
+
+    domElements.backdrop.classList.add("open")
+    document.body.style.overflow = "hidden"
 }
