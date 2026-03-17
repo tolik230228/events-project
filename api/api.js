@@ -14,6 +14,12 @@ domElements.searchInput.addEventListener("keypress", (event) => {
 domElements.searchBtn.addEventListener("click", handleSearch)
 
 export async function fetchEvents() {
+  if (state.show_only_fav) {
+   const events = state.favorites_events.some(event => event.name.includes(domElements.searchInput.value.trim())) 
+   renderEvents(events)
+   return
+  }
+  
   renderSkeletons();
   
   try {
