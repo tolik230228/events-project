@@ -7,7 +7,9 @@ export const state = {
     total_pages: 0,
     keyword: "",
     country_code: "",
-    current_events: []
+    current_events: [],
+    favorites_events: JSON.parse(localStorage.getItem("favorites_events")|| "[]"),
+    show_only_fav: false
 }
 
 export const countries = [
@@ -31,6 +33,7 @@ export const domElements = {
     eventsGrid: document.getElementById("events-container"),
     paginationContainer: document.getElementById("pagination"),
     searchBtn: document.getElementById("search-btn"),
+    favoritesBtn: document.getElementById("fav-toggle-btn"),
 
     backdrop: document.getElementById("backdrop"),
     modalCloseBtn: document.getElementById("modal-close-btn"),

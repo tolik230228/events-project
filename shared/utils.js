@@ -1,6 +1,12 @@
 import { domElements, state } from "./constants.js";
 import { fetchEvents } from "../api/api.js"
 
+domElements.modalCloseBtn.addEventListener("click", () =>{
+  domElements.backdrop.classList.remove("open")
+  document.body.style.overflow = "";
+})
+
+
 export const renderSkeletons = () => {
   domElements.eventsGrid.innerHTML = "";
 
@@ -29,6 +35,7 @@ export function renderEvents(events) {
 
     const cardHtml = `
         <div class="card" onclick="openModal('${event.id}')">
+        <button class="fav-btn">❤️</button>
       <div class="image-container"> 
         <img src="${image}" alt="${event.name}" class="card-img">
     </div>
@@ -121,3 +128,4 @@ window.openModal = function(id) {
     domElements.backdrop.classList.add("open")
     document.body.style.overflow = "hidden"
 }
+

@@ -319,3 +319,39 @@ h1 {
 .modal-action-btn:hover {
     opacity: 0.8;
 }
+
+.fav-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    border: none;   
+}
+
+.fav-btn.in-fav {
+    color: #ff00bf;
+    background-color: white;
+}
+
+.fav-toggle-btn {
+    padding: 12px 30px;
+    border-radius: 25px;
+    border: 1px solid #ff00bf;
+    background-color: transparent;
+    color: #ff00bf;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.fav-toggle-btn.active {
+    background-color: #ff00bf;
+    color: white;
+}
